@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# stop the container
+docker stop repo_test
+
+# remove the container
+docker rm repo_test
+
+# build the image
+docker build . -t apache_yum_repo
+
+# run a container of the newly created image 
+docker run \
+	-it \
+	--name repo_test \
+	-p 8888:80 \
+	--volume=/root/task3/repo/packages:/my_repo/packages \
+	apache_yum_repo:latest
