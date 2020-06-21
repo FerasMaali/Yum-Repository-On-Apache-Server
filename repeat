@@ -1,0 +1,4 @@
+docker stop repo_test
+docker rm repo_test
+docker build . -t apache_yum_repo
+docker run -it --name repo_test -p 8888:80 --volume=/root/task3/repo/packages:/my_repo apache_yum_repo:latest
