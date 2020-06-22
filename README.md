@@ -12,6 +12,7 @@ In this task I was supposed to create a yum package repository on an Apache serv
 1. Clone this repository using 
 ```
 	git clone git@github.com:FerasMaali/Internship-Task3.git
+	cd Internship-Task3
 ```
 2. Populate the repo with packages using 
 ```

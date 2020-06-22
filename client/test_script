@@ -5,9 +5,9 @@ result=$(docker run repo_client:latest 'rpm -qa' | grep 'httpd-2.4.6-93.el7.cent
 echo "********************************************************"
 if [ $result ]
 then
-	echo "Success"
+	echo "+++++++++++++++++Success"
 else
-	echo "Fail"
+	echo "--------------------Fail"
 fi
 echo "********************************************************"
 
