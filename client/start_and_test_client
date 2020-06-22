@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 docker build -t repo_client .
 
 docker stop repo_client
@@ -9,4 +11,7 @@ docker rm repo_client
 docker run \
 	-it \
 	--name="repo_client" \
-	repo_client:latest
+	repo_client
+
+./test_script
+

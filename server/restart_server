@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # stop the container
-docker stop repo_test
+docker stop yum_server
 
 # remove the container
-docker rm repo_test
+docker rm yum_server
 
 # build the image
 docker build . -t apache_yum_repo

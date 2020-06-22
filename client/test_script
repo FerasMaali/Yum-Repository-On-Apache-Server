@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-# Exit immediately if non-zero value returned
-set -e
+result=$(docker run repo_client:latest 'rpm -qa' | grep 'httpd-2.4.6-93.el7.centos.x86_64')
 
-# Try to install httpd
-yum install --enablerepo=my_repo httpd -y
+echo "********************************************************"
+if [ $result ]
+then
+	echo "Success"
+else
+	echo "Fail"
+fi
+echo "********************************************************"
 
-# if the program reached here then it is a success
-echo "***************************************************"
-echo "*                                                 *"
-echo "*  httpd was successfully installed from my_repo  *"
-echo "*                                                 *"
-echo "***************************************************"
