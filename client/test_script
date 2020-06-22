@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Exit immediately if non-zero value returned
+set -e
+
+# Try to install httpd
+yum install --enablerepo=my_repo httpd -y
+
+# if the program reached here then it is a success
+echo "***************************************************"
+echo "*                                                 *"
+echo "*  httpd was successfully installed from my_repo  *"
+echo "*                                                 *"
+echo "***************************************************"
