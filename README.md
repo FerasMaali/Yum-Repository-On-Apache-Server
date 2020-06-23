@@ -30,7 +30,9 @@ In this task I was supposed to create a yum package repository on an Apache serv
 ```
 
 ### Note
-You may need to modify the server ip address in `server/my_repo.repo`. The following command may help you to find the ip address
+1. You may need to modify the server ip address in `server/my_repo.repo`. The following command may help you to find the ip address
 ```
 	ip a | grep 'inet ' | grep docker | awk '{ print $2 }' | python3 -c 'print(input().split("/")[0])'
 ```
+2. On some systems you may need to modify the firewall settings so that it doesn't prevent the client's connection to the server. See: https://stackoverflow.com/questions/40214617/docker-no-route-to-host
+
