@@ -10,20 +10,18 @@ pipeline {
 	stages {
 		stage('Initializing repo & server') {
 			failFast true
-			steps {
-				parallel {
-					stage ('Initializing server') {
-						steps {
-							dir('server') {
-								sh './start_server'
-							}
+			parallel {
+				stage ('Initializing server') {
+					steps {
+						dir('server') {
+							sh './start_server'
 						}
 					}
-					
-					stage  ('Populating repo') {
-						steps {
-							sh './create_repo'
-						}
+				}
+
+				stage  ('Populating repo') {
+					steps {
+						sh './create_repo'
 					}
 				}
 			}
