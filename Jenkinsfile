@@ -4,7 +4,7 @@ pipeline {
 	}
 
 	triggers {
-		cron('* * * * *')
+		cron('H/5 * * * *')
 	}
 
 	stages {
