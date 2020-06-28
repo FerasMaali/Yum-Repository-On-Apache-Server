@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# stop the container
+TMP=`docker ps | grep yum_server | awk '{ print $1 }'`
+if [ $TMP ]
+then
+	docker stop yum_server
+	echo "stopped previously running yum_server container"
+fi
+
+# remove the container
+TMP=`docker ps -a | grep yum_server | awk '{ print $1 }'`
+if [ $TMP ]
+then
+	docker rm yum_server
+	echo "removed previous yum_server container"
+fi
+
+# build the image
+docker build . -t apache_yum_repo
+
+# run a container of the newly created image 
+docker run \
+	-it -d \
+	--name yum_server \
+	-p 8888:80 \
+	--volume=$PWD/packages:/my_repo/packages \
+	apache_yum_repo:latest

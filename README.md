@@ -21,7 +21,7 @@ cd Internship-Task3
 3. Start the server
 ```
 cd server
-./restart_server
+./start_server
 ```
 4. Start the client
 ```

@@ -4,10 +4,27 @@ pipeline {
 	}
 
 	stages {
-		stage('nothing important') {
+		stage('Creating and starting server') {
 			steps {
-				sh 'pwd'
-				sh 'ls -l'
+				dir('server') {
+					sh './start_server'
+				}
+			}
+		}
+
+		stage('Creating and starting client') {
+			steps {
+				dir('client') {
+					sh './create_client'
+				}
+			}
+		}
+
+		stage('Testing client') {
+			steps {
+				dir('client') {
+					sh './test_client'
+				}
 			}
 		}
 	}
