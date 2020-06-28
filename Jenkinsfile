@@ -27,5 +27,9 @@ pipeline {
 				}
 			}
 		}
+
+		stage('Test webhook') {
+			steps{ echo 'webhook worked' }
+		}
 	}
 }
