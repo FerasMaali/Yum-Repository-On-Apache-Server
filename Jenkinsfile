@@ -24,13 +24,13 @@ pipeline {
 						sh './create_repo'
 					}
 				}
-			}
-		}
-
-		stage('Creating and starting client') {
-			steps {
-				dir('client') {
-					sh './create_client'
+				
+				stage('Creating client') {
+					steps {
+						dir('client') {
+							sh './create_client'
+						}
+					}
 				}
 			}
 		}
