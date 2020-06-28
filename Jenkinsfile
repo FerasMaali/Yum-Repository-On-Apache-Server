@@ -4,7 +4,7 @@ pipeline {
 	}
 
 	stages {
-		stage('Initializing repo & server') {
+		stage('Everything before the test') {
 			failFast true
 			parallel {
 				stage ('Initializing server') {
