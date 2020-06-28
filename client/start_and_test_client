@@ -9,7 +9,7 @@ docker rm repo_client
 docker run \
 	-it \
 	--name="repo_client" \
-	repo_client
+	repo_client:latest
 
 ./test_script
 
