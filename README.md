@@ -1,4 +1,4 @@
-# Internship-Task3
+# Yum-Repository-On-Apache-Server
 In this task I was supposed to create a yum package repository on an Apache server and test it using a CentOS container
 
 ## How I solved it?
