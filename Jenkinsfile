@@ -3,10 +3,6 @@ pipeline {
 		label 'master'
 	}
 
-	triggers {
-		cron('H/5 * * * *')
-	}
-
 	stages {
 		stage('Initializing repo & server') {
 			failFast true
