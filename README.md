@@ -14,19 +14,27 @@ In this task I was supposed to create a yum package repository on an Apache serv
 git clone git@github.com:FerasMaali/Internship-Task3.git
 cd Internship-Task3
 ```
+
 2. Populate the repo with packages using 
 ```
 ./create_repo
 ```
+
 3. Start the server
 ```
 cd server
 ./start_server
 ```
-4. Start the client
+
+4. Create the client
 ```
 cd ../client
-./start_and_test_client
+./create_client
+```
+
+5. Test the client
+```
+./test_client
 ```
 
 ### Note
