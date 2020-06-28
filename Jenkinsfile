@@ -13,13 +13,17 @@ pipeline {
 			steps {
 				parallel {
 					stage ('Initializing server') {
-						dir('server') {
-							sh './start_server'
+						steps {
+							dir('server') {
+								sh './start_server'
+							}
 						}
 					}
 					
 					stage  ('Populating repo') {
-						sh './create_repo'
+						steps {
+							sh './create_repo'
+						}
 					}
 				}
 			}
