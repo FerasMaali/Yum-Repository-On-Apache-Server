@@ -3,6 +3,10 @@ pipeline {
 		label 'master'
 	}
 
+	trigger {
+		cron('H/2 * * * *')
+	}
+
 	stages {
 		stage('Creating and starting server') {
 			steps {
