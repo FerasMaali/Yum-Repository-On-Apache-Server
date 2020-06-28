@@ -3,7 +3,7 @@ pipeline {
 		label 'master'
 	}
 
-	trigger {
+	triggers {
 		cron('H/2 * * * *')
 	}
 
