@@ -17,12 +17,11 @@ then
 fi
 
 # build the image
-docker build . -t apache_yum_repo
+docker build . -t ferasmaali/apache_yum_repo:latest
 
 # run a container of the newly created image 
 docker run \
 	-it -d \
 	--name yum_server \
 	-p 8888:80 \
-	--volume=$PWD/packages:/my_repo/packages \
-	apache_yum_repo:latest
+	ferasmaali/apache_yum_repo:latest
