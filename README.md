@@ -11,28 +11,28 @@ In this task I was supposed to create a yum package repository on an Apache serv
 ## How to use the code?
 1. Clone this repository using 
 ```
-	git clone git@github.com:FerasMaali/Internship-Task3.git
-	cd Internship-Task3
+git clone git@github.com:FerasMaali/Internship-Task3.git
+cd Internship-Task3
 ```
 2. Populate the repo with packages using 
 ```
-	./create_repo
+./create_repo
 ```
 3. Start the server
 ```
-	cd server
-	./restart_server
+cd server
+./restart_server
 ```
 4. Start the client
 ```
-	cd ../client
-	./start_client
+cd ../client
+./start_and_test_client
 ```
 
 ### Note
 1. You may need to modify the server ip address in `server/my_repo.repo`. The following command may help you to find the ip address
 ```
-	ip a | grep 'inet ' | grep docker | awk '{ print $2 }' | python3 -c 'print(input().split("/")[0])'
+ip a | grep 'inet ' | grep docker | awk '{ print $2 }' | python3 -c 'print(input().split("/")[0])'
 ```
 2. On some systems you may need to modify the firewall settings so that it doesn't prevent the client's connection to the server. See: https://stackoverflow.com/questions/40214617/docker-no-route-to-host
 
