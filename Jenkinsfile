@@ -31,9 +31,5 @@ pipeline {
 				}
 			}
 		}
-
-		stage('Test webhook') {
-			steps{ echo 'Just to make sure' }
-		}
 	}
 }
