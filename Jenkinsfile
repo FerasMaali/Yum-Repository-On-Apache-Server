@@ -15,16 +15,20 @@ pipeline {
 					}
 				}
 
-				stage  ('Populating repo') {
-					steps {
-						sh './create_repo'
-					}
-				}
-				
-				stage('Creating client') {
-					steps {
-						dir('client') {
-							sh './create_client'
+				stage ('populate repo then create client') {
+					stages {
+						stage  ('Populating repo') {
+							steps {
+								sh './create_repo'
+							}
+						}
+
+						stage('Creating client') {
+							steps {
+								dir('client') {
+									sh './create_client'
+								}
+							}
 						}
 					}
 				}
