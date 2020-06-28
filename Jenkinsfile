@@ -6,8 +6,8 @@ pipeline {
 	stages {
 		stage('nothing important') {
 			steps {
-				sh 'echo got here successfully'
-				sh 'echo got here more successfully'
+				sh 'pwd'
+				sh 'ls -l'
 			}
 		}
 	}
