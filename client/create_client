@@ -2,14 +2,3 @@
 
 docker build -t repo_client .
 
-TMP=`docker ps | grep repo_client | awk '{ print $1}'`
-if [ $TMP ]
-then
-	docker stop repo_client
-fi
-
-TMP=`docker ps -a | grep repo_client | awk '{ print $1}'`
-if [ $TMP ]
-then
-	docker rm repo_client
-fi
