@@ -33,7 +33,7 @@ pipeline {
 		}
 
 		stage('Test webhook') {
-			steps{ echo 'webhook worked' }
+			steps{ echo 'Just to make sure' }
 		}
 	}
 }
