@@ -39,7 +39,7 @@ pipeline {
 			}
 		}
 		
-		stage('Pushing server image to docker hub') {
+		stage('Pushing server image to NXRM') {
 			steps {
 				withCredentials([usernamePassword(credentialsId: 'nexus', usernameVariable: 'HUB_USER', passwordVariable: 'HUB_TOKEN')]) {                      
 					sh '''
