@@ -43,7 +43,7 @@ pipeline {
 			steps {
 				withCredentials([usernamePassword(credentialsId: 'nexus', usernameVariable: 'HUB_USER', passwordVariable: 'HUB_TOKEN')]) {                      
 					sh '''
-						docker login -u $HUB_USER -p $HUB_TOKEN
+						docker login -u $HUB_USER -p $HUB_TOKEN localhost:8082
 						docker tag apache_yum_repo:latest localhost:8082/ferasmaali/apache_yum_repo
 						docker push localhost:8082/ferasmaali/apache_yum_repo
 					'''
