@@ -1,38 +1,42 @@
 # Yum-Repository-On-Apache-Server
-In this task I was supposed to create a yum package repository on an Apache server and test it using a CentOS container
+In this task:
+1. At first, I was supposed to create a yum repository and make it available on the network using Apache server and test it using a CentOS container
+2. After that, I was expected to create a Jenkins Pipeline to automate the full CD pipeline
 
 ## How I solved it?
 * Have an Apache server on a CentOS docker container that provides the repository's packages
-* Packages served by the server are the ones available in `server/packages` (a docker volume)
 * Create another CentOS docker container that works as a client
 * The client doesn't have any repository other than `my_repo` (I can use yum priority as an alternative)
-* To populate the container with packages, use `create_repo` script or do it manually
+* Setup a Nexus repository manager to be used as a docker registry (See NXRM [ repository ]( https://hub.docker.com/r/sonatype/nexus3/ ) on docker hub
+* Deploy the server's docker image to [ docker hub ]( https://hub.docker.com/r/sonatype/nexus3/ ) & local NXRM
+* Created a Jenkins Pipeline (See [ Jenkinsfile ]( https://github.com/FerasMaali/Yum-Repository-On-Apache-Server/blob/master/Jenkinsfile )) to automate the process
 
 ## How to use the code?
+### First Method (recommended)
+1. Fork this repository
+2. Setup your local registry using NXRM
+3. Setup a Jenkins server to use your new repository (the Github one), and its Jenkins Pipeline automatically
+
+### Second Method
 1. Clone this repository using 
 ```
 git clone git@github.com:FerasMaali/Internship-Task3.git
 cd Internship-Task3
 ```
 
-2. Populate the repo with packages using 
-```
-./create_repo
-```
-
-3. Start the server
+2. Start the server
 ```
 cd server
 ./start_server
 ```
 
-4. Create the client
+3. Create the client
 ```
 cd ../client
 ./create_client
 ```
 
-5. Test the client
+4. Test the client
 ```
 ./test_client
 ```
@@ -42,5 +46,6 @@ cd ../client
 ```
 ip a | grep 'inet ' | grep docker | awk '{ print $2 }' | python3 -c 'print(input().split("/")[0])'
 ```
+
 2. On some systems you may need to modify the firewall settings so that it doesn't prevent the client's connection to the server. See: https://stackoverflow.com/questions/40214617/docker-no-route-to-host
 
