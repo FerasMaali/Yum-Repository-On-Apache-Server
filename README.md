@@ -20,8 +20,8 @@ In this task:
 ### Second Method
 1. Clone this repository using 
 ```
-git clone git@github.com:FerasMaali/Internship-Task3.git
-cd Internship-Task3
+git clone https://github.com/FerasMaali/Yum-Repository-On-Apache-Server.git
+cd Yum-Repository-On-Apache-Server
 ```
 
 2. Start the server
