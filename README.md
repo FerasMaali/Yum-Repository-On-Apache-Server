@@ -8,7 +8,7 @@ In this task:
 * Create another CentOS docker container that works as a client
 * The client doesn't have any repository other than `my_repo` (I can use yum priority as an alternative)
 * Setup a Nexus repository manager to be used as a docker registry (See NXRM [ repository ]( https://hub.docker.com/r/sonatype/nexus3/ ) on docker hub
-* Deploy the server's docker image to [ docker hub ]( https://hub.docker.com/r/sonatype/nexus3/ ) & local NXRM
+* Deploy the server's docker image to [ docker hub ]( https://hub.docker.com/repository/docker/ferasmaali/apache_yum_repo ) & local NXRM
 * Created a Jenkins Pipeline (See [ Jenkinsfile ]( https://github.com/FerasMaali/Yum-Repository-On-Apache-Server/blob/master/Jenkinsfile )) to automate the process
 
 ## How to use the code?
